@@ -4,8 +4,6 @@
 //<ШРИФТЫ>
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 /*font-family: 'Roboto', sans-serif;*/
-//@import url('../fonts/banny-fonts/stylesheet.css');
-//font-family: 'Banny Round';*/
 //====================================================
 //<ПЕРЕМЕННЫЕ>
 $minw: 320;
@@ -17,6 +15,10 @@ $md4: 575.98;
 $md5: 479.98;
 $md6: 426;
 $md7: 375;
+
+// ЦВЕТА
+$main: #172755;
+$secondary: #8794BA;
 //====================================================
 //<МИКСИНЫ>
 @mixin flexbox() {display: -webkit-box;display: -moz-box;display: -ms-flexbox;display: -webkit-flex;display: flex;}
@@ -58,7 +60,7 @@ body {
 	font-weight: bold;
 	font-size: 40px;
 	line-height: 47px;
-	color: #172755;
+	color: $main;
 	margin-bottom: 30px;
 	&--white {
 		color: #fff;
@@ -80,7 +82,7 @@ body {
 .text--section {
 	font-size: 18px;
 	line-height: 27px;
-	color: #8794BA;
+	color: $secondary;
 	@media (max-width: 1200px) {
 		text-align: center;
 	}
@@ -94,7 +96,7 @@ body {
 	font-size: 16px;
 	line-height: 19px;
 	text-align: center;
-	color: #172755;
+	color: $main;
 }
 .section-body {
 	display: flex;
@@ -174,7 +176,7 @@ body {
 	&__link {
 		font-size: 16px;
 		line-height: 19px;
-		color: #8794BA;
+		color: $secondary;
 		&:hover,
 		&:active {
 			color: #fff;
@@ -191,7 +193,7 @@ body {
 		}
 	}
 	&__btn {
-		color: #8794BA;
+		color: $secondary;
 		&:hover,
 		&:active {
 			color: #fff;
@@ -287,7 +289,7 @@ body {
 			left: 0;
 			top: -100%;
 			overflow: auto;
-			background-color: #172755;
+			background-color: $main;
 			padding: 90px 20px 20px 20px;
 			transition: all 0.3s ease 0s;
 		}
@@ -388,7 +390,7 @@ body {
 	&__text {
 		font-size: 18px;
 		line-height: 27px;
-		color: #8794BA;
+		color: $secondary;
 		margin-bottom: 49px;
 	}
 	&-button {
@@ -530,7 +532,7 @@ body {
 			font-size: 16px;
 			line-height: 22px;
 			text-align: center;
-			color: #8794BA;
+			color: $secondary;
 		}
 	}
 
@@ -759,18 +761,18 @@ body {
 				text-align: center;
 				color: #fff;
 				&.blue {
-					color: #172755;
+					color: $main;
 				}
 			}
 		}
 		.blue {
-			color: #172755;
+			color: $main;
 		}
 		&__subtitle {
 			font-size: 18px;
 			line-height: 27px;
 			text-align: center;
-			color: #8794BA;
+			color: $secondary;
 			&::after {
 				content: "";
 				display: block;
@@ -789,7 +791,7 @@ body {
 			font-size: 16px;
 			line-height: 22px;
 			text-align: center;
-			color: #8794BA;
+			color: $secondary;
 			margin-bottom: 40px;
 		}
 		&-button {
@@ -889,7 +891,7 @@ body {
 	&__link {
 		font-size: 14px;
 		line-height: 16px;
-		color: #8794BA;
+		color: $secondary;
 	}
 	&-social {
 		&__list {
@@ -965,7 +967,7 @@ body {
 	&__headers {
 		display: flex;
 		max-width: 100%;
-		background-color: #8794BA;
+		background-color: $secondary;
 		border-radius: 20px 20px 0 0;
 	}
 	&__title {
@@ -978,7 +980,7 @@ body {
 		color: #fff;
 		cursor: pointer;
 		&--active {
-			color: #172755;
+			color: $main;
 			background-color: #fff;
 		}
 	}
@@ -1003,23 +1005,23 @@ body {
 	&__input {
 		display: block;
 		width: 100%;
-		color: #172755;
-		border: 1px solid #8794BA;
+		color: $main;
+		border: 1px solid $secondary;
 		padding: 10px;
 		border-radius: 68px;
 		margin-bottom: 15px;
 	}
 	::placeholder {
-		color: #8794BA;
+		color: $secondary;
 		opacity: 1;
 	}
 
 	:-ms-input-placeholder {
-		color: #8794BA;
+		color: $secondary;
 	}
 
 	::-ms-input-placeholder {
-		color: #8794BA;
+		color: $secondary;
 	}
 	&__btn {
 		width: 100%;
@@ -1029,7 +1031,7 @@ body {
 	}
 	&__link {
 		a {
-			color: #8794BA;
+			color: $secondary;
 			text-decoration: underline;
 		}
 	}
