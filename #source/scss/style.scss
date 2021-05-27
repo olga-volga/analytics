@@ -52,6 +52,7 @@ body {
 	line-height: 19px;
 	text-align: center;
 	border-radius: 68px;
+	padding: 15.5px 83px;
 }
 .title--h2 {
 	font-weight: bold;
@@ -184,11 +185,12 @@ body {
 	}
 	&-signin {
 		margin-right: 40px;
-		&__btn {}
+		.signin {
+			border: 0;
+			padding: 0;
+		}
 	}
 	&__btn {
-		font-size: 16px;
-		line-height: 19px;
 		color: #8794BA;
 		&:hover,
 		&:active {
@@ -196,7 +198,7 @@ body {
 		}
 	}
 	&-signup {
-		&__btn {
+		.signup {
 			border: 1px solid #465B95;
 			border-radius: 68px;
 			padding: 10.5px 53px;
@@ -275,7 +277,9 @@ body {
 			background-color: #fff;
 		}
 		&__menu {
-			display: block;
+			flex-direction: column;
+			justify-content: flex-start;
+			align-items: center;
 			flex: 0;
 			position: fixed;
 			width: 100%;
@@ -284,33 +288,38 @@ body {
 			top: -100%;
 			overflow: auto;
 			background-color: #172755;
-			padding: 80px 0 20px 30px;
+			padding: 90px 20px 20px 20px;
 			transition: all 0.3s ease 0s;
 		}
 		&__menu.active {
 			top: 0;
 		}
 		&__list {
-			display: block;
+			flex-direction: column;
+			align-items: center;
 			li {
-				margin: 0 0 26px 0;
+				margin: 0 0 30px 0;
 			}
 		}
 		&__link,
 		&__btn {
+			text-align: center;
 			font-size: 18px;
 			line-height: 21px;
 		}
 		&-buttons {
-			display: block;
+			flex-direction: column;
+			align-items: center;
 		}
 		&-signin {
 			margin-right: 0;
 			margin-bottom: 26px;
 		}
-		&-signup__btn {
-			border: 0;
-			padding: 0;
+		&-signup {
+			.signup {
+				border: 0;
+				padding: 0;
+			}
 		}
 	}
 	
@@ -328,8 +337,10 @@ body {
 @media (max-width: $md6+px) {
 	.header {
 		padding-top: 10px;
-		&__menu {
-			padding: 80px 0 20px 20px;
+		&__menu,
+		&__list,
+		&-buttons {
+			align-items: flex-start;
 		}
 	}
 	
@@ -386,7 +397,6 @@ body {
 	&__btn {
 		color: #fff;
 		background-color: #EF2A82;
-		padding: 15.5px 80px;
 		&:hover,
 		&:active {
 			background-color: transparent;
@@ -791,7 +801,6 @@ body {
 			height: 50px;
 			color: #fff;
 			border: 1px solid #2A407C;
-			padding: 15.5px 80px;
 			&:hover,
 			&:active {
 				border: 1px solid #fff;
@@ -925,4 +934,119 @@ body {
 	}
 }
 
+/*===MODAL===*/
+.modal {
+	display: none;
+	position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, .5);
+
+	&__body {
+		max-width: 400px;
+		max-height: 80vh;
+        overflow-y: auto;
+		margin: 50px auto 0;
+		background-color: #fff;
+		border-radius: 20px;
+	}
+	&__close {
+		position: absolute;
+		top: 5px;
+		right: 20px;
+		font-size: 50px;
+		color: #fff;
+		cursor: pointer;
+	}
+	&__headers {
+		display: flex;
+		max-width: 100%;
+		background-color: #8794BA;
+		border-radius: 20px 20px 0 0;
+	}
+	&__title {
+		flex: 1;
+		font-weight: 500;
+		font-size: 22px;
+		line-height: 30px;
+		padding: 15px 0;
+		text-align: center;
+		color: #fff;
+		cursor: pointer;
+		&--active {
+			color: #172755;
+			background-color: #fff;
+		}
+	}
+	#signin {
+		border-radius: 20px 0 0;
+	}
+	#signup {
+		border-radius: 0 20px 0 0;
+	}
+	.form-content {}
+	&__form {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		padding: 60px 40px 40px;
+		.input {
+			width: 100%;
+			margin-bottom: 20px;
+		}
+	}
+	&__input {
+		display: block;
+		width: 100%;
+		color: #172755;
+		border: 1px solid #8794BA;
+		padding: 10px;
+		border-radius: 68px;
+		margin-bottom: 15px;
+	}
+	::placeholder {
+		color: #8794BA;
+		opacity: 1;
+	}
+
+	:-ms-input-placeholder {
+		color: #8794BA;
+	}
+
+	::-ms-input-placeholder {
+		color: #8794BA;
+	}
+	&__btn {
+		width: 100%;
+		background-color: #EF2A82;
+		color: #fff;
+		margin-bottom: 20px;
+	}
+	&__link {
+		a {
+			color: #8794BA;
+			text-decoration: underline;
+		}
+	}
+	@media (max-width: $md3+px) {
+		padding: 0px 30px;
+	}
+	@media (max-width: $md6+px) {
+		padding: 0px 20px;
+
+		&__form {
+			padding: 60px 20px 20px;
+		}
+		&__title {
+			font-size: 18px;
+			line-height: 28px;
+			padding: 10px 0;
+		}
+	}
+}
 

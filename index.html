@@ -24,10 +24,10 @@
 							</ul>
 							<div class="header-buttons">
 								<div class="header-signin">
-									<a href="" class="header__btn header-signin__btn">Sign in</a>
+									<a data-modal href="" class="header__btn btn signin">Sign in</a>
 								</div>
 								<div class="header-signup">
-									<a href="" class="header__btn header-signup__btn">Sign Up</a>
+									<a data-modal href="" class="header__btn btn signup">Sign Up</a>
 								</div>
 							</div>
 						</nav>
@@ -38,7 +38,7 @@
 				</div>
 			</header>
 			<div class="content">
-				<main class="main">
+				<section class="main">
 						<div class="main-body">
 							<div class="main-body__text">
 								<h1 class="main__title">Monitor your business on real-time dashboard</h1>
@@ -51,7 +51,7 @@
 								<img src="img/main/01.png" alt="" class="main__img">
 							</div>
 						</div>
-				</main>
+				</section>
 				<section id="features" class="features">
 					<div class="container">
 						<div class="features-top">
@@ -204,6 +204,39 @@
 					</footer>
 				</div>
 			</div>
+
+			<div class="modal">
+				<div class="modal__body">
+					<div data-close class="modal__close">&times;</div>
+					<div class="modal__headers">
+						<h4 id="signin" class="modal__title">Sign In</h4>
+						<h4 id="signup" class="modal__title">Sign Up</h4>
+					</div>
+					<div class="form-content">
+						<form action="#" class="modal__form">
+			                <div class="input">
+			                    <input required placeholder="Username or Email" name="email" type="email" class="modal__input">
+			                    <input required placeholder="Password" name="password" type="password" class="modal__input">
+			                </div>
+			                <button class="modal__btn btn">SIGN IN</button>
+			                <div class="modal__link">
+			                	<a href="#">Forgot password?</a>
+			                </div>
+			            </form>
+					</div>
+					<div class="form-content">
+			            <form action="#" class="modal__form">
+			                <div class="input">
+			                	<input required placeholder="Username" name="username" type="text" class="modal__input">
+			                    <input required placeholder="Email" name="email" type="email" class="modal__input">
+			                    <input required placeholder="Password" name="password" type="password" class="modal__input">
+			                </div>
+			                <button class="modal__btn btn">SIGN UP</button>
+			            </form>
+			        </div>
+				</div>
+			</div>
+
 		</div>
 		<script src="js/script.js"></script>
 	</body>

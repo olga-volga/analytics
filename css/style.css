@@ -91,7 +91,8 @@ body {
   font-size: 16px;
   line-height: 19px;
   text-align: center;
-  border-radius: 68px; }
+  border-radius: 68px;
+  padding: 15.5px 83px; }
 
 .title--h2 {
   font-weight: bold;
@@ -245,17 +246,18 @@ body {
     display: flex; }
   .header-signin {
     margin-right: 40px; }
+    .header-signin .signin {
+      border: 0;
+      padding: 0; }
   .header__btn {
-    font-size: 16px;
-    line-height: 19px;
     color: #8794BA; }
     .header__btn:hover, .header__btn:active {
       color: #fff; }
-  .header-signup__btn {
+  .header-signup .signup {
     border: 1px solid #465B95;
     border-radius: 68px;
     padding: 10.5px 53px; }
-    .header-signup__btn:hover {
+    .header-signup .signup:hover {
       border: 1px solid #fff; }
   .header__burger {
     display: none; }
@@ -320,7 +322,16 @@ body {
       bottom: 9px;
       background-color: #fff; }
     .header__menu {
-      display: block;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      -webkit-box-pack: start;
+      -ms-flex-pack: start;
+      justify-content: flex-start;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
       -webkit-box-flex: 0;
       -ms-flex: 0;
       flex: 0;
@@ -331,25 +342,38 @@ body {
       top: -100%;
       overflow: auto;
       background-color: #172755;
-      padding: 80px 0 20px 30px;
+      padding: 90px 20px 20px 20px;
       -webkit-transition: all 0.3s ease 0s;
       -o-transition: all 0.3s ease 0s;
       transition: all 0.3s ease 0s; }
     .header__menu.active {
       top: 0; }
     .header__list {
-      display: block; }
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center; }
       .header__list li {
-        margin: 0 0 26px 0; }
+        margin: 0 0 30px 0; }
     .header__link, .header__btn {
+      text-align: center;
       font-size: 18px;
       line-height: 21px; }
     .header-buttons {
-      display: block; }
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center; }
     .header-signin {
       margin-right: 0;
       margin-bottom: 26px; }
-    .header-signup__btn {
+    .header-signup .signup {
       border: 0;
       padding: 0; } }
 
@@ -364,8 +388,10 @@ body {
 @media (max-width: 426px) {
   .header {
     padding-top: 10px; }
-    .header__menu {
-      padding: 80px 0 20px 20px; } }
+    .header__menu, .header__list, .header-buttons {
+      -webkit-box-align: start;
+      -ms-flex-align: start;
+      align-items: flex-start; } }
 
 .content {
   margin-top: -90px; }
@@ -415,8 +441,7 @@ body {
     display: flex; }
   .main__btn {
     color: #fff;
-    background-color: #EF2A82;
-    padding: 15.5px 80px; }
+    background-color: #EF2A82; }
     .main__btn:hover, .main__btn:active {
       background-color: transparent;
       border: 1px solid #fff; }
@@ -729,8 +754,7 @@ body {
       display: block;
       height: 50px;
       color: #fff;
-      border: 1px solid #2A407C;
-      padding: 15.5px 80px; }
+      border: 1px solid #2A407C; }
       .pricing-bottom__btn:hover, .pricing-bottom__btn:active {
         border: 1px solid #fff; }
     .pricing-bottom .btn--pink {
@@ -840,3 +864,114 @@ body {
       margin-bottom: 20px; }
       .footer-menu__list li:last-child {
         margin-bottom: 0; } }
+
+/*===MODAL===*/
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.5); }
+  .modal__body {
+    max-width: 400px;
+    max-height: 80vh;
+    overflow-y: auto;
+    margin: 50px auto 0;
+    background-color: #fff;
+    border-radius: 20px; }
+  .modal__close {
+    position: absolute;
+    top: 5px;
+    right: 20px;
+    font-size: 50px;
+    color: #fff;
+    cursor: pointer; }
+  .modal__headers {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    max-width: 100%;
+    background-color: #8794BA;
+    border-radius: 20px 20px 0 0; }
+  .modal__title {
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 30px;
+    padding: 15px 0;
+    text-align: center;
+    color: #fff;
+    cursor: pointer; }
+    .modal__title--active {
+      color: #172755;
+      background-color: #fff; }
+  .modal #signin {
+    border-radius: 20px 0 0; }
+  .modal #signup {
+    border-radius: 0 20px 0 0; }
+  .modal__form {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    padding: 60px 40px 40px; }
+    .modal__form .input {
+      width: 100%;
+      margin-bottom: 20px; }
+  .modal__input {
+    display: block;
+    width: 100%;
+    color: #172755;
+    border: 1px solid #8794BA;
+    padding: 10px;
+    border-radius: 68px;
+    margin-bottom: 15px; }
+  .modal ::-webkit-input-placeholder {
+    color: #8794BA;
+    opacity: 1; }
+  .modal :-ms-input-placeholder {
+    color: #8794BA;
+    opacity: 1; }
+  .modal ::-ms-input-placeholder {
+    color: #8794BA;
+    opacity: 1; }
+  .modal ::placeholder {
+    color: #8794BA;
+    opacity: 1; }
+  .modal :-ms-input-placeholder {
+    color: #8794BA; }
+  .modal ::-ms-input-placeholder {
+    color: #8794BA; }
+  .modal__btn {
+    width: 100%;
+    background-color: #EF2A82;
+    color: #fff;
+    margin-bottom: 20px; }
+  .modal__link a {
+    color: #8794BA;
+    text-decoration: underline; }
+  @media (max-width: 767.98px) {
+    .modal {
+      padding: 0px 30px; } }
+  @media (max-width: 426px) {
+    .modal {
+      padding: 0px 20px; }
+      .modal__form {
+        padding: 60px 20px 20px; }
+      .modal__title {
+        font-size: 18px;
+        line-height: 28px;
+        padding: 10px 0; } }
